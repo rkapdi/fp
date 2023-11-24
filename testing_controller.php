@@ -1,14 +1,8 @@
 <?php
-// Include the model that contains database functions
 include('model.php');
+include('view_signin.php');
 
-// Check if the 'page' parameter is empty
-if (empty($_POST['page'])) {
-    include('view_startpage.php');
-    exit;
-}
 
-// Get the 'page' parameter from the POST request
 $page = $_POST['page'];
 
 // Check which page is being accessed
@@ -18,6 +12,7 @@ if ($page == 'signin') {
     // Handle different commands
     switch ($command) {
         case 'SignIn':
+            echo ("XXX");
             // Validate and sanitize user inputs
             $username = isset($_POST['username']) ? $_POST['username'] : '';
             $password = isset($_POST['password']) ? $_POST['password'] : '';
