@@ -20,7 +20,7 @@
             <h1 class="text-decoration-none text-white fs-2 fw-bold">PolitiFace</h1>
         </div>
     </header>
-    
+
     <div class="d-flex min-vh-100" lc-helper="background" style="background:url('../images/hero.jpg')  center / cover no-repeat; background-color:#444; background-blend-mode: overlay;">
         <div class="align-self-center text-center text-light col-md-8 offset-md-2">
             <div class="lc-block mb-4">
@@ -33,12 +33,12 @@
             <div class="container-lg">
                 <form method="POST" action="controller.php">
                     <!-- Hidden Inputs -->
-                    <input type="hidden" name="page" value="signin">
+                    <input type="hidden" name="page" value="SignIn">
                     <input type="hidden" name="command" value="SignIn">
 
                     <!-- Email Input -->
                     <div class="row mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">EMAIL</label>
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputEmail3" name="username">
                         </div>
@@ -56,7 +56,7 @@
                     <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
                 </form>
             </div>
-            
+
             <div class="lc-block">
             </div>
         </div>

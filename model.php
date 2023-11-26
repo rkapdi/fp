@@ -16,9 +16,9 @@ function searchPoliticians($search) {
     $search = "%" . $search . "%";
 
     // Prepare a SQL statement to search for politicians
-    $sql = "SELECT p_name, Country, Position, Party, Details 
-    FROM Politicians_project WHERE p_name LIKE '$search' OR 
-    Country LIKE '$search' OR Position LIKE '$search' OR 
+    $sql = "SELECT p_name, Country, Position, Party, Details
+    FROM Politicians_project WHERE p_name LIKE '$search' OR
+    Country LIKE '$search' OR Position LIKE '$search' OR
     Party LIKE '$search' OR Details LIKE '$search'";
     $result = mysqli_query($conn, $sql);
     // Check if a matching record exists
@@ -78,21 +78,14 @@ function user_valid($u, $p) {
 function user_exists($u) {
     global $conn;
     // Prepare a SQL statement with a placeholder for the username
-    $sql = "SELECT * FROM Users_project WHERE Username=?";
-    $stmt = mysqli_prepare($conn, $sql);
-    // Bind the username to the prepared statement
-    mysqli_stmt_bind_param($stmt, "s", $u);
-    // Execute the statement and get the result
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    // Check if a matching record exists
-    if (mysqli_num_rows($result) > 0) {
+    $sql = "SELECT * FROM Users_project WHERE Username='$u'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0)
         return true;
-    } else {
+    else
         return false;
-    }
 }
+
 
 /**
  * Signs up a new user by inserting their information into the database.
@@ -102,24 +95,16 @@ function user_exists($u) {
  * @param string $e The email address of the new user.
  * @return bool True if the user is successfully signed up, false otherwise.
  */
-function signup_user($u, $p, $e) {
+function signup_user($u, $p) {
     global $conn;
-    // Check if the user already exists
-    if (user_exists($u)) {
-        return false; // User already exists
-    }
 
-    // Get the current date
+    if (user_exists($u))
+        return false;
+
     $d = date('Ymd');
-    // Prepare a SQL statement
-    $sql = "INSERT INTO Users_project (Username, Password, Email, RegistrationDate) VALUES (?, ?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $sql);
-    // Bind user inputs to the prepared statement
-    mysqli_stmt_bind_param($stmt, "sssi", $u, $p, $e, $d);
-    // Execute the statement and get the result
-    $result = mysqli_stmt_execute($stmt);
-
-    return $result; // True if the user is successfully signed up, false otherwise
+    $sql = "insert into Users_project values (NULL,'$u', '$p', NULL, $d)";
+    $result = mysqli_query($conn, $sql);
+    return $result;
 }
 
 ?>

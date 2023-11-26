@@ -7,7 +7,7 @@
 
     <!-- Bootstrap Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
             <!-- Register Form -->
             <div class="container-lg">
                 <form action="controller.php" method="post">
-                <input type="hidden" name="page" value="SignUp">
+                <input type="hidden" name="page" value="start">
                 <input type="hidden" name="command" value="SignUp">
 
 
@@ -77,13 +77,13 @@
 document.getElementById('signin-btn').addEventListener('click', function() {
   // Create an XMLHttpRequest object
   var xhr = new XMLHttpRequest();
-  
+
   // Define the URL to load
   var url = 'view_signin.php'; // Replace with the correct URL
-  
+
   // Configure the request
   xhr.open('GET', url, true);
-  
+
   // Set up the callback function for a successful response
   xhr.onload = function() {
     if (xhr.status === 200) {
@@ -94,7 +94,7 @@ document.getElementById('signin-btn').addEventListener('click', function() {
       alert('Error loading view_signin.php');
     }
   };
-  
+
   // Send the request
   xhr.send();
 });
