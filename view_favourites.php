@@ -165,7 +165,7 @@ body {
       </div>
     </nav>
     <div class="container-fluid">
-      <h1>Home Page</h1>
+      <h1>Favourites</h1>
       <!-- <p>
         Make sure to keep all page content within the 
         <code>#content</code>.

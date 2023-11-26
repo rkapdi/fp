@@ -22,7 +22,7 @@
     <header class="header p-3 position-absolute start-0 top-0 end-0">
         <div class="d-flex justify-content-between align-items-center">
             <a href="#" class="text-decoration-none text-white fs-2 fw-bold">PolitiFace</a>
-            <button type="button" class="btn btn-danger btn-lg">Sign In</button>
+            <button type="button" id="signin-btn" class="btn btn-danger btn-lg">Sign In</button>
         </div>
     </header>
 
@@ -43,8 +43,9 @@
             <!-- Register Form -->
             <div class="container-lg">
                 <form action="controller.php" method="post">
-                    <input type="hidden" name="page" value="StartPage">
-                    <input type="hidden" name="command" value="SignUp">
+                <input type="hidden" name="page" value="SignUp">
+                <input type="hidden" name="command" value="SignUp">
+
 
                     <div class="row mb-3">
                         <label for="inputEmail" class="col-sm-2 col-form-label">USERNAME</label>
@@ -69,8 +70,36 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+document.getElementById('signin-btn').addEventListener('click', function() {
+  // Create an XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+  
+  // Define the URL to load
+  var url = 'view_signin.php'; // Replace with the correct URL
+  
+  // Configure the request
+  xhr.open('GET', url, true);
+  
+  // Set up the callback function for a successful response
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Replace the content of the current page with the response content
+      document.body.innerHTML = xhr.responseText;
+    } else {
+      // Handle errors here
+      alert('Error loading view_signin.php');
+    }
+  };
+  
+  // Send the request
+  xhr.send();
+});
+
+</script>
+
 </body>
 </html>

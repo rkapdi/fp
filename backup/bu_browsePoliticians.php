@@ -156,64 +156,11 @@
                 </div>
             </nav>
             <div class="container">
-                <h1>Account Management</h1>
-                <div class="container-fluid" style="padding: 20px;">
-                    <div class="row">
+                <h1>Browse Politicians</h1>
+                <!-- <div class="container-fluid" id='browse-politicians-result' style="padding: 20px;">
 
-                        <div class="col-md-3 border-right">
-                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                                <img class="rounded-circle mt-5" width="150px"
-                                    src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                <span class="text-black-50"></span>
-                                <span></span>
-                                <!-- This line had an extra space, I removed it -->
-                            </div>
-                            <br>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button"
-                                    type="button">Update Profile Photo</button></div>
-                        </div>
-
-                        <div class="col-md-5 border-right">
-                            <div class="mt-3">
-                                <form action="controller.php" method="post">
-                                    <div class="form-group row">
-                                        <label for="newUsername" class="col-md-6 col-form-label">Change User Name</label>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" id="newUsername"
-                                                name="newUsername" placeholder="Enter new username" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="newEmail" class="col-md-6 col-form-label">Change Email ID</label>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" id="newEmail" name="newEmail"
-                                                placeholder="Enter new email id" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="newPassword" class="col-md-6 col-form-label">Change Password</label>
-                                        <div class="col-md-6">
-                                            <input type="password" class="form-control" id="newPassword"
-                                                name="newPassword" placeholder="New Password" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-3 text-center">
-                                        <button type="submit" class="btn btn-primary">Save Profile</button>
-                                        <button type="button" class="btn btn-danger profile-button">Delete Profile</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <!-- This column is currently commented out, but it should work fine when uncommented -->
-                        </div>
-
-                    </div>
-                </div>
+                </div> -->
+                
             </div>
         </div>
     </div>
@@ -248,3 +195,6 @@
 </body>
 
 </html>
+
+
+
